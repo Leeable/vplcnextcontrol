@@ -342,9 +342,9 @@ config() {
         IP_NF_ARPFILTER IP_NF_ARP_MANGLE | sed 's/^/  /'
     echo
     echo '- IPv6: Netfilter Configuration:'
-    check_flags NF_TABLES_IPV6 NFT_REJECT_IPV6 NF_REJECT_IPV6 IP6_NF_IPTABLES \
+    check_flags NF_TABLES_IPV6 IP6_NF_NAT NFT_REJECT_IPV6 NF_REJECT_IPV6 IP6_NF_IPTABLES \
         IP6_NF_MATCH_EUI64 IP6_NF_MATCH_FRAG IP6_NF_MATCH_OPTS IP6_NF_MATCH_IPV6HEADER IP6_NF_MATCH_RT IP6_NF_FILTER \
-        IP6_NF_MANGLE IP6_NF_RAW NF_DEFRAG_IPV6 | sed 's/^/  /'
+        IP6_NF_MANGLE IP6_NF_RAW NF_DEFRAG_IPV6 IP6_NF_MATCH_RPFILTER | sed 's/^/  /'
     echo
     echo '- Bridge Configuration:'
     check_flags NF_TABLES_BRIDGE BRIDGE_NF_EBTABLES \
