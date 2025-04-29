@@ -200,7 +200,9 @@ profile vplcnextcontrol flags=(mediate_deleted, attach_disconnected){
     # Network Rules
     network inet, # allow all inet types and protocols
     network unix, # allow all unix types and protocols
-    network bind, # allow socket binding maybe switch to `network netlink` if unavailable. Or try deactivating
+    network raw, # allow creation of raw network sockets
+    network packet,
+    network netlink dgram,
     
     # Signal Rules
     signal,    # allow all signals
