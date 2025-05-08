@@ -88,7 +88,9 @@ profile vplcnextcontrol flags=(mediate_deleted, attach_disconnected){
     /usr/lib/** ix, #Allow execution of anything in /usr/lib/...
     /usr/libexec/** ix, #Allow execution of anything in /usr/libexec/...
     /usr/sbin/** ix, #Allow execution of anything in /usr/sbin/...
-    
+
+    /usr/local/lib/** wkx, #Allow Users add their share libraries.
+
     /usr/share/ca-certificates/** wk, #Allow the ability to add certificates.
     
     /var/** wk, #Allow write access and creation access to /var/..
