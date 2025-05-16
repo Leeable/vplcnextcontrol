@@ -88,12 +88,14 @@ profile vplcnextcontrol flags=(mediate_deleted, attach_disconnected){
     /usr/lib/** ix, #Allow execution of anything in /usr/lib/...
     /usr/libexec/** ix, #Allow execution of anything in /usr/libexec/...
     /usr/sbin/** ix, #Allow execution of anything in /usr/sbin/...
+    
+    /usr/share/ca-certificates/** wk, #Allow the ability to add certificates.
+
 
     /usr/local/lib/** ixwk, #Allow Users add their share libraries.
-
-    /usr/share/ca-certificates/** wk, #Allow the ability to add certificates.
-    
     /var/** wk, #Allow write access and creation access to /var/..
+    /opt/plcnext/apps/mounted/** ix, # Allow executable binary 
+    /opt/plcnext/data/Plc/** ix, # Allow PLM projects
     
     #Mount Rules
     mount options=(rw, rslave) -> /,
@@ -205,6 +207,7 @@ profile vplcnextcontrol flags=(mediate_deleted, attach_disconnected){
     network raw, # allow creation of raw network sockets
     network packet,
     network netlink dgram,
+    network inet6, # allow ssh network 
     
     # Signal Rules
     signal,    # allow all signals
