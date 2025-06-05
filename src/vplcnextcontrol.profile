@@ -96,6 +96,10 @@ profile vplcnextcontrol flags=(mediate_deleted, attach_disconnected){
     /var/** wk, #Allow write access and creation access to /var/..
     /opt/plcnext/apps/mounted/** ix, # Allow executable binary 
     /opt/plcnext/data/Plc/** ix, # Allow PLM projects
+
+    /etc/.#localtime* rwkl, #Allow to modify timezone
+    /etc/localtime rwkl, #Allow to modify timezone
+    /etc/timezone rw, #Allow to modify timezone
     
     #Mount Rules
     mount options=(rw, rslave) -> /,
